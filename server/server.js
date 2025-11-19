@@ -1,9 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
 const path = require("path"); 
-// Route imports
+// Route impor
 const publicRoutes = require('./routes/PublicRoutes/publicRoutes');
 const routesPatients = require('./routes/PatientRoutes/routesPatient');
 const adminRoutes = require('./routes/AdminRoutes/adminRoutes');

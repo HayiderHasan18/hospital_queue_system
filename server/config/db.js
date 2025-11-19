@@ -1,22 +1,21 @@
 const mysql2 = require("mysql2");
 
-// Create the pool
 const dbConnection = mysql2.createPool({
-  host: "localhost",
-  user: "heydara",
-  password: "heydara18",
-  database: "hospital_queue",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
   connectionLimit: 10,
+  ssl: false
 });
-
 
 dbConnection.query("SELECT 'Database Connected'", (err, result) => {
   if (err) {
-    console.error("Database connection failed:", err.message);
+    console.error("❌ Database connection failed:", err.message);
   } else {
-    console.log(result[0]);
+    console.log("✔️ Database Connected");
   }
 });
 
-//Export the promise-enabled pool
 module.exports = dbConnection.promise();
