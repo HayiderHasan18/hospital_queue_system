@@ -1,0 +1,118 @@
+/* src/components/DoctorDashboard/CurrentPatient/CurrentPatient.css */
+.current-patient {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  margin-bottom: 20px;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.current-patient:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c6fbb;
+  margin: 0;
+}
+
+/* Placeholder style */
+.patient-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.person-icon-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #e8f0fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.person-icon {
+  font-size: 40px;
+  color: #2c6fbb;
+}
+
+.placeholder-text {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Avatar circle */
+.avatar-circle {
+  background-color: #2c6fbb;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* Info layout */
+.patient-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #2c6fbb;
+}
+
+.info p {
+  margin: 0.3rem 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Icons */
+.icon {
+  margin-right: 0.5rem;
+  color: #2c6fbb;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

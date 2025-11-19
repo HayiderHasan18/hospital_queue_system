@@ -1,0 +1,162 @@
+/* Main Table Container */
+.doctor-table-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+/* Table Styles */
+.doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.doctor-table th, 
+.doctor-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.doctor-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #34495e;
+}
+
+/* View Button */
+.view-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.view-btn:hover {
+  background: #2980b9;
+}
+
+.view-btn.empty {
+  background: #95a5a6;
+}
+
+.view-btn.empty:hover {
+  background: #7f8c8d;
+}
+
+/* Modal Styles */
+.patient-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h4 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.modal-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.patient-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-list th, 
+.patient-list td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.patient-list th {
+  background: #f8f9fa;
+}
+
+.no-patients {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .doctor-table-container {
+    padding: 10px;
+  }
+
+  .doctor-table th,
+  .doctor-table td,
+  .patient-list th,
+  .patient-list td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-header h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .modal-header {
+    padding: 10px;
+  }
+
+  .modal-body {
+    padding: 10px;
+  }
+}

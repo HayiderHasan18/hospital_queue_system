@@ -1,0 +1,144 @@
+.benefits-section {
+	padding: 1px 20px;
+	background-color: #ffffff;
+  }
+  
+  .container {
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  .section-Headers {
+	text-align: center;
+	margin-bottom: 50px;
+  }
+  .benefits-section h1 {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+  .benefits-section h1 {
+	font-size: 2.5rem;
+	color: #2c3e50;
+	margin-bottom: 15px;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	 text-align: center;
+  }
+  
+  .benefits-section h1.fade-in {
+	opacity: 1;
+	transform: translateY(0);
+  }
+ .section-subtitle {
+	color: #666;
+	font-size: 1.2rem;
+	max-width: 700px;
+	margin: 0 auto;
+	line-height: 1.6;
+  }
+  
+  .benefit-block {
+	margin-bottom: 80px;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .benefit-block.fade-in-up {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
+  .benefit-content {
+	display: flex;
+	align-items: center;
+	gap: 60px;
+  }
+  
+  .benefit-content.image-right {
+	flex-direction: row-reverse; 
+  }
+  
+  .benefit-image-container {
+	flex: 1;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+  }
+  
+  .benefit-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	transition: all 0.4s ease;
+  }
+  
+  .benefit-image-container:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .benefit-image-container:hover .benefit-image {
+	transform: scale(1.03);
+  }
+  
+  .benefit-text {
+	flex: 1;
+  }
+  
+  .benefit-text h3 {
+	font-size: 1.8rem;
+	color: #2c3e50;
+	margin-bottom: 20px;
+  }
+  
+  .benefit-text ul {
+	list-style: none;
+	padding: 0;
+  }
+  
+  .benefit-text li {
+	margin-bottom: 15px;
+	color: #555;
+	line-height: 1.6;
+	position: relative;
+	padding-left: 25px;
+  }
+  
+  .benefit-text li:before {
+	content: "•";
+	color: #4a90e2;
+	font-size: 1.5rem;
+	position: absolute;
+	left: 0;
+	top: -3px;
+  }
+  
+  @media (max-width: 768px) {
+	.benefit-content,
+	.benefit-content.image-right {
+	  flex-direction: column;
+	  gap: 30px;
+	}
+  
+	.benefit-image-container {
+	  margin-bottom: 20px;
+	}
+  
+	.benefit-text {
+	  text-align: center;
+	}
+  
+	.benefit-text li {
+	  text-align: left;
+	  padding-left: 0;
+	}
+  
+	.benefit-text li:before {
+	  display: none;
+	}
+  }
+  

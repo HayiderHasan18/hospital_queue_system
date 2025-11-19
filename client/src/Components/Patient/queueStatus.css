@@ -1,0 +1,117 @@
+/* src/components/PatientDashboard/QueueStatus/QueueStatus.css */
+.queue-status {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #2c6fbb;
+  font-weight: 600;
+  text-align: center;
+}
+
+.queue-card {
+  background: #e8f0fe;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.status-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.watch-icon {
+  font-size: 28px;
+  color: #2c6fbb;
+  margin-bottom: 8px;
+}
+
+.status-text {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.queue-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: #2c6fbb;
+  margin-bottom: 5px;
+}
+
+.queue-label {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.status-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.status-icon {
+  font-size: 20px;
+  color: #2c6fbb;
+}
+
+.status-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.status-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c6fbb;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .queue-number {
+    font-size: 36px;
+  }
+  
+  .status-value {
+    font-size: 22px;
+  }
+}

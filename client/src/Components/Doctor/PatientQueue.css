@@ -1,0 +1,141 @@
+
+.patient-queue {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.patient-queue h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.queue-table-container {
+  overflow-x: auto;
+  
+}
+
+.queue-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.queue-table th {
+  background: #f5f5f5;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 2px solid #ddd;
+}
+
+.queue-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.queue-table tr:last-child td {
+  border-bottom: solid;
+}
+
+.queue-table tr:hover {
+  background: #f5f5f5;
+}
+
+.patient-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-name {
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.patient-contact {
+  font-size: 13px;
+  color: #666;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status-badge.next {
+  background: #e8f0fe;
+  color: #2c6fbb;
+}
+
+.status-badge.waiting {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.call-button {
+  background: #2c6fbb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.call-button:hover {
+  background: #1a5a9e;
+}
+
+.waiting-text {
+  color: #666;
+  font-size: 14px;
+}
+
+.Consultation-Started{
+background: #2c6fbb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.starConseltation {
+  
+  background: #bbb12c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.mark-served-wrapper {
+  margin-top: 150px; 
+  text-align: center; 
+}
+
+.mark-served-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mark-served-button:hover {
+  background: #218838;
+}

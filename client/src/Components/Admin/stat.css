@@ -1,0 +1,65 @@
+/* Container for all stat cards */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Header with title and icon */
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.stat-card-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.stat-card-icon {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+/* Value */
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Description text */
+.stat-card-description {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Status colors */
+.stat-card-value.green {
+  color: #2ecc71;
+}
+
+.stat-card-value.orange {
+  color: #e67e22;
+}

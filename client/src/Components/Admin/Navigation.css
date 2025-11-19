@@ -1,0 +1,45 @@
+.navigation-tabs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.navigation-tabs {
+  display: flex;
+  gap: 50px;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  left: 50%;
+  bottom: -8px;
+  background-color: #3498db;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.tab-btn.active {
+  color: #3498db;
+}
+
+.tab-btn.active::after {
+  width: 100%;
+  left: 0;
+}

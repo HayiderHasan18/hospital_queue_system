@@ -1,0 +1,75 @@
+.served-today {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* Header section with two names and subtitles */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.name-block {
+  flex: 1;
+}
+
+.name-block .name-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.name-block .subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Patient list section */
+.patients-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+/* Existing styles for each patient */
+.served-patient {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background-color: white
+}
+
+.served-patient .patient-name {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.patient-details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.queue-id {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.served-time {
+  margin-left: 5px;
+}
+
+.duration {
+  font-size: 14px;
+  color: #666;
+}

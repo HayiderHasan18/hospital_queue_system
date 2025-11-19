@@ -1,0 +1,186 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6f5f3;
+  line-height: 1.5;
+}
+
+/* Overlay & Modal */
+.auth-modal-overlay {
+ min-height: 100vh;
+  background-color: #f6f5f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.message {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+.auth-card {
+  background: white;
+  border-radius: 0.5rem;
+  display: flex;
+  width: 100%;
+  max-width: 768px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 15px hwb(0 0% 100% / 0.552);
+}
+/* Image Section */
+.auth-image-section {
+  display: none;
+  background-color: white;
+  color: white;
+  width: 70%;
+  padding: 2rem;
+  background: url(/client/src/assets/Images/doctors.png);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.auth-image-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #00c73c;
+}
+.auth-image-section p {
+  font-size: 0.875rem;
+  color: aqua;
+}
+@media (min-width: 768px) {
+  .auth-image-section {
+    display: flex;
+  }
+}
+
+/* Form Section */
+.auth-form-section {
+  width: 100%;
+  padding: 2rem;
+}
+.auth-form-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Input Form Group */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #00a3e0;
+  box-shadow: 0 0 0 1px #00a3e0;
+}
+.form-group input.error,
+.form-group select.error {
+  border-color: #ef4444;
+}
+
+/* Error Message */
+.error-message {
+  font-size: 0.875rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+/* Layout for two-column fields */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Buttons */
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #00a3e0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.auth-button:hover {
+  background: #008ac7;
+}
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Toggle Link */
+.toggle-link-container {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+.toggle-button {
+  background: none;
+  border: none;
+  color: #00a3e0;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+.toggle-button:hover {
+  text-decoration: underline;
+}
+
+/* Forgot Password */
+.forgot-password-link {
+  text-align: right;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.forgot-password-link a {
+  color: #00a3e0;
+  text-decoration: none;
+}
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+}
+.close-button:hover {
+  color: #374151;
+}

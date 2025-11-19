@@ -1,0 +1,114 @@
+/* src/components/Stats/Stats.module.css */
+.statsContainer {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+
+.statBox {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  flex: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.statBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.statBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.statBox:nth-child(1)::before {
+  background: linear-gradient(90deg, #3498db, #2c6fbb);
+}
+
+.statBox.statBoxServed::before {
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.statBox.statBoxTime::before {
+  background: linear-gradient(90deg, #9b59b6, #8e44ad);
+}
+
+.iconContainer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.statBox:nth-child(1) .iconContainer {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.statBox.statBoxServed .iconContainer {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.statBox.statBoxTime .iconContainer {
+  background-color: rgba(155, 89, 182, 0.1);
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.statBox:nth-child(1) .icon {
+  color: #3498db;
+}
+
+.statBox.statBoxServed .icon {
+  color: #2ecc71;
+}
+
+.statBox.statBoxTime .icon {
+  color: #9b59b6;
+}
+
+.statBox h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.statBox small {
+  display: block;
+  color: #777;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .statsContainer {
+    flex-direction: column;
+  }
+  
+  .statBox {
+    width: 100%;
+  }
+}
