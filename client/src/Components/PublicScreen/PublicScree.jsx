@@ -3,6 +3,9 @@ import './public.css';
 import { FiBell, FiUser, FiMapPin, FiVolume2 } from 'react-icons/fi';
 import socket from '../../socket';
 
+// Use environment variable for backend
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
 const PublicScreen = () => {
   const [time, setTime] = useState(new Date());
   const [nowServingList, setNowServingList] = useState([]);
@@ -39,7 +42,7 @@ const PublicScreen = () => {
 
   const fetchCurrentServing = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/public/current-serving');
+      const res = await fetch(`${BACKEND_URL}/public/current-serving`);
       if (res.ok) {
         const data = await res.json();
         setNowServingList(Array.isArray(data) ? data : data ? [data] : []);

@@ -9,18 +9,18 @@ const PatientTable = ({ patients = [], doctors = [], queue = [] }) => {
     setAssigningPatient(patientId);
     setSelectedDoctor('');
   };
-
+const BACKEND_URL = import.meta.env.VITE_API_URL;
   const confirmAssignment = async () => {
     if (selectedDoctor && assigningPatient) {
       try {
-        const res = await fetch(`/api/admin/assign`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            patientId: assigningPatient,
-            doctorName: selectedDoctor,
-          }),
-        });
+        const res = await fetch(`${BACKEND_URL}/admin/assign`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    patientId: assigningPatient,
+    doctorName: selectedDoctor,
+  }),
+});
 
         if (res.ok) {
           setAssigningPatient(null);

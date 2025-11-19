@@ -9,6 +9,9 @@ import './DoctorDash.css';
 import socket from '../../socket';
 import { useNavigate } from 'react-router-dom';
 
+// Use environment variable for backend URL
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
 const DoctorDashboard = () => {
   const [doctorUserId, setDoctorUserId] = useState(null);
   const [patients, setPatients] = useState([]);
@@ -30,7 +33,7 @@ const DoctorDashboard = () => {
 
   const handleProfileUpdate = async (formData) => {
     try {
-      const res = await fetch('http://localhost:5000/api/user/profile', {
+      const res = await fetch(`${BACKEND_URL}/user/profile`, {
         method: 'POST',
         body: formData,
       });
@@ -72,7 +75,7 @@ const DoctorDashboard = () => {
 
   const fetchDoctorData = async (userId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/doctor/patients?doctorId=${userId}`);
+      const res = await fetch(`${BACKEND_URL}/doctor/patients?doctorId=${userId}`);
       const data = await res.json();
 
       setPatients(data.queuePatients || []);
@@ -98,7 +101,7 @@ const DoctorDashboard = () => {
     try {
       updatePatientStatus(patient.id, 'called');
 
-      const res = await fetch('/api/doctor/call-patient', {
+      const res = await fetch(`${BACKEND_URL}/doctor/call-patient`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ patientId: patient.id, doctorId: doctorUserId }),
@@ -130,7 +133,7 @@ const DoctorDashboard = () => {
       updatePatientStatus(patient.id, 'in_progress');
       setCurrentPatient({ ...patient, status: 'in_progress' });
 
-      const res = await fetch('/api/doctor/start-consultation', {
+      const res = await fetch(`${BACKEND_URL}/doctor/start-consultation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ patientId: patient.id, doctorId: doctorUserId }),
@@ -162,7 +165,7 @@ const DoctorDashboard = () => {
       setServedPatients(prev => [...prev, { ...currentPatient, status: 'served' }]);
       setCurrentPatient(null);
 
-      const res = await fetch('/api/doctor/mark-served', {
+      const res = await fetch(`${BACKEND_URL}/doctor/mark-served`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ patientId, doctorId: doctorUserId }),
@@ -219,4 +222,5 @@ const DoctorDashboard = () => {
     </>
   );
 };
+
 export default DoctorDashboard;

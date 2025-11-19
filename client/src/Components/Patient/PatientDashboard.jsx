@@ -9,7 +9,11 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
 
-const socket = io('http://localhost:5000');
+// Use environment variable for backend URL
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
+// Initialize socket with backend URL
+const socket = io(BACKEND_URL);
 
 const PatientDashboard = () => {
   const navigate = useNavigate();
@@ -18,7 +22,8 @@ const PatientDashboard = () => {
     const stored = sessionStorage.getItem('patient_user');
     return stored ? JSON.parse(stored) : null;
   });
-const userId = user?.id;
+
+  const userId = user?.id;
   const [queueData, setQueueData] = useState(null);
   const [doctorData, setDoctorData] = useState(null);
 
@@ -29,7 +34,7 @@ const userId = user?.id;
 
   const handleProfileUpdate = async (formData) => {
     try {
-      const res = await fetch('http://localhost:5000/api/user/profile', {
+      const res = await fetch(`${BACKEND_URL}/user/profile`, {
         method: 'POST',
         body: formData,
       });
@@ -49,7 +54,7 @@ const userId = user?.id;
     if (!userId) return;
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/patients/dashboard?userId=${userId}`
+        `${BACKEND_URL}/patients/dashboard?userId=${userId}`
       );
       setQueueData(res.data.queueStatus);
       setDoctorData(res.data.doctorAssignment);
@@ -69,13 +74,8 @@ const userId = user?.id;
       }
     };
 
-    const onQueueCalled = () => {
-      fetchDashboard();
-    };
-
-    const onConsultationStarted = () => {
-      fetchDashboard();
-    };
+    const onQueueCalled = () => fetchDashboard();
+    const onConsultationStarted = () => fetchDashboard();
 
     socket.on('queue_updated', onQueueUpdated);
     socket.on('queue_called', onQueueCalled);

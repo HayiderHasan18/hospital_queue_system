@@ -5,8 +5,14 @@ import PatientTable from './patientTable';
 import StatsCards from './StatsCards';
 import NavigationTabs from './NavigationTabs';
 import Header from '../Doctor/Header';
-import socket from '../../socket';
+import { io } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
+
+// Backend URL from environment variable
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
+// Initialize socket.io client with backend URL
+const socket = io(BACKEND_URL);
 
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('patients');
@@ -29,9 +35,12 @@ function AdminDashboard() {
 
   const handleProfileUpdate = async (formData) => {
     try {
-      const res = await fetch('http://localhost:5000/api/user/profile', {
+      const res = await fetch(`${BACKEND_URL}/user/profile`, {
         method: 'POST',
         body: formData,
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`
+        }
       });
       const data = await res.json();
 
@@ -51,10 +60,10 @@ function AdminDashboard() {
   const fetchAllData = async () => {
     try {
       const [patientsRes, doctorsRes, queueRes, analyticsRes] = await Promise.all([
-        fetch('/api/admin/patients'),
-        fetch('/api/admin/doctors'),
-        fetch('/api/admin/queue'),
-        fetch('/api/admin/analytics/summary'),
+        fetch(`${BACKEND_URL}/admin/patients`, { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }),
+        fetch(`${BACKEND_URL}/admin/doctors`, { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }),
+        fetch(`${BACKEND_URL}/admin/queue`, { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }),
+        fetch(`${BACKEND_URL}/admin/analytics/summary`, { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }),
       ]);
 
       setPatients(await patientsRes.json());

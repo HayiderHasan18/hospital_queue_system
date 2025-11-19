@@ -3,6 +3,9 @@ import axios from 'axios';
 import './doctorInfo.css';
 import { FaUser, FaStethoscope, FaPhone, FaHospitalAlt } from 'react-icons/fa';
 
+// Use environment variable for backend URL
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
 const DoctorsInfo = () => {
   const [fullName, setFullName] = useState('');
   const [speciality, setSpeciality] = useState('');
@@ -18,7 +21,7 @@ const DoctorsInfo = () => {
         const name = user ? `${user.first_name} ${user.last_name}` : '';
         setFullName(name);
 
-        const res = await axios.get('http://localhost:5000/api/doctor-info/info', {
+        const res = await axios.get(`${BACKEND_URL}/doctor-info/info`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`
           }
@@ -42,7 +45,7 @@ const DoctorsInfo = () => {
   const isFormFilled = speciality.trim() !== '' && phone.trim() !== '' && room.trim() !== '';
 
   const handleSubmit = () => {
-    axios.put('http://localhost:5000/api/doctor-info/info',
+    axios.put(`${BACKEND_URL}/doctor-info/info`,
       { speciality, phone, room },
       {
         headers: {

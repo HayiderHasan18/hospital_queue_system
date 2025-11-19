@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+// Use environment variable for backend URL
+const BACKEND_URL = import.meta.env.VITE_API_URL;
 const SignUp = ({ onToggleForm }) => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -62,7 +63,7 @@ const SignUp = ({ onToggleForm }) => {
     setMessage(""); 
 
     try {
-      const API_URL = "http://localhost:5000/api/users/register";
+      const API_URL = `${BACKEND_URL}/users/register`;
 
       
       const { confirmPassword: _, ...dataToSend } = formData;

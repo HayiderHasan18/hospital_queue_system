@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Use environment variable for backend URL
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
 const Login = ({ onToggleForm }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -40,7 +43,7 @@ const Login = ({ onToggleForm }) => {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/users/login", {
+      const res = await fetch(`${BACKEND_URL}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

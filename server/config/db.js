@@ -1,21 +1,27 @@
-const mysql2 = require("mysql2");
+const mysql = require("mysql2");
+require('dotenv').config(); // load .env variables
 
-const dbConnection = mysql2.createPool({
+const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   port: process.env.DB_PORT,
+  waitForConnections: true,
   connectionLimit: 10,
-  ssl: false
+  queueLimit: 0,
+  ssl: {
+    rejectUnauthorized: false  // falserequired for Aiven
+  }
 });
 
-dbConnection.query("SELECT 'Database Connected'", (err, result) => {
+db.getConnection((err, connection) => {
   if (err) {
     console.error("❌ Database connection failed:", err.message);
   } else {
     console.log("✔️ Database Connected");
+    if (connection) connection.release(); // release the connection
   }
 });
 
-module.exports = dbConnection.promise();
+module.exports = db.promise(); // use async/await queries

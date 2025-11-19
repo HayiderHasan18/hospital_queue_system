@@ -1,8 +1,10 @@
 import { io } from 'socket.io-client';
-const socket = io('http://localhost:5000', {
+
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
+
+const socket = io(SOCKET_URL, {
   transports: ['websocket'],
   withCredentials: true,
-  
   reconnectionAttempts: 5,
   timeout: 10000,
 });

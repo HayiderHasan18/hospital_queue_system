@@ -3,6 +3,9 @@ import axios from 'axios';
 import './PersonalInfo.css';
 import { FaUser, FaBirthdayCake, FaPhone, FaHome } from 'react-icons/fa';
 
+// Use environment variable for backend URL
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
 const PersonalInfo = () => {
   const [fullName, setFullName] = useState('');
   const [age, setAge] = useState('');
@@ -18,17 +21,17 @@ const PersonalInfo = () => {
         const name = user ? `${user.first_name} ${user.last_name}` : '';
         setFullName(name);
 
-        const res = await axios.get("http://localhost:5000/api/patient/info", {
+        const res = await axios.get(`${BACKEND_URL}/patient/info`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`
           }
         });
 
         const { fullName, age, phone, address } = res.data;
-        setFullName(fullName || "");
-        setAge(age || "");
-        setPhone(phone || "");
-        setAddress(address || "");
+        setFullName(fullName || name);
+        setAge(age || '');
+        setPhone(phone || '');
+        setAddress(address || '');
         setIsNewPatient(!age && !phone && !address);
       } catch (err) {
         console.error("Error fetching patient info:", err.response?.data || err.message);
@@ -42,23 +45,23 @@ const PersonalInfo = () => {
 
   const isFormFilled = age.toString().trim() !== '' && phone.trim() !== '' && address.trim() !== '';
 
-  const handleSubmit = () => {
-    axios.put("http://localhost:5000/api/patient/info",
-      { age, phone, address },
-      {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("token")}`
+  const handleSubmit = async () => {
+    try {
+      await axios.put(
+        `${BACKEND_URL}/patient/info`,
+        { age, phone, address },
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`
+          }
         }
-      }
-    )
-      .then(() => {
-        alert("Information saved!");
-        setIsNewPatient(false);
-      })
-      .catch(err => {
-        console.error("Error saving info:", err.response?.data || err.message);
-        alert("Error saving info");
-      });
+      );
+      alert("Information saved!");
+      setIsNewPatient(false);
+    } catch (err) {
+      console.error("Error saving info:", err.response?.data || err.message);
+      alert("Error saving info");
+    }
   };
 
   if (loading) return <div>Loading...</div>;
