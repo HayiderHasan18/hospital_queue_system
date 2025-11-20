@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './DoctorAssign.css';
+import './doctorAssign.css';
 import { FaUserMd, FaDoorOpen, FaStethoscope } from 'react-icons/fa';
 
 const DoctorAssignment = ({ data }) => {
