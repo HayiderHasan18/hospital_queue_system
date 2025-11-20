@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Analytics from './Analytics';
 import DoctorTable from './DoctorTable';
-import PatientTable from './patientTable';
+import PatientTable from './PatientTable';
 import StatsCards from './StatsCards';
 import NavigationTabs from './NavigationTabs';
 import Header from '../Doctor/Header';
