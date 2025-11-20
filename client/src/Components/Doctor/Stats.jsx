@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { FaUsers, FaUserClock, FaUserCheck, FaClock } from 'react-icons/fa';
-import styles from './Stats.module.css';
+import styles from './stats.module.css';
 
 const Stats = ({ queueCount, calledCount, servedCount }) => {
   return (

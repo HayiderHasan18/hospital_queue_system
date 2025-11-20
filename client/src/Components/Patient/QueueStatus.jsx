@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './QueueStatus.css';
+import './queueStatus.css';
 import { FaClock, FaUserFriends, FaCalendarAlt, FaIdCard } from 'react-icons/fa';
 
 const QueueStatus = ({ data }) => {

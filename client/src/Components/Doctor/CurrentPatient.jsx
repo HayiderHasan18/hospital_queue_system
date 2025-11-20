@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaUser, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import './CurrentPatient.css';
+import './currentPatient.css';
 
 const CurrentPatient = ({ patient,  }) => {
   const [timer, setTimer] = useState(0);

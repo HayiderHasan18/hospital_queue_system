@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './PersonalInfo.css';
+import './personalInfo.css';
 import { FaUser, FaBirthdayCake, FaPhone, FaHome } from 'react-icons/fa';
 
 // Use environment variable for backend URL
