@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f9fafb;
+  overflow-x: hidden; /* Prevent sideways scroll */
 }
 
 /* HEADER */
@@ -12,6 +13,7 @@ header {
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  overflow-x: hidden; /* Prevent header overflow */
 }
 
 .header-container {
@@ -29,6 +31,8 @@ header {
   font-weight: bold;
   color: #007bff;
   flex-shrink: 1;
+  max-width: 65%; /* Prevent logo from overflowing on mobile */
+  word-wrap: break-word;
 }
 
 /* NAV + BUTTON GROUP */
@@ -85,7 +89,6 @@ nav a:hover {
 /* ========================================= */
 /*               MOBILE STYLES               */
 /* ========================================= */
-
 @media screen and (max-width: 768px) {
   /* Show hamburger */
   .hamburger {
