@@ -2,7 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./Benefit.css";
 import PatientImage from "../../assets/Images/patients.png";
-import AdminImage from "../../assets/images/admin.png";
+import AdminImage from "../../assets/Images/admin.png";
 import DoctorImage from "../../assets/Images/doctors.png";
 import TransparencyImage from "../../assets/Images/transparency.jpg"; 
 import SecurityImage from "../../assets/Images/security.jpg"; // 

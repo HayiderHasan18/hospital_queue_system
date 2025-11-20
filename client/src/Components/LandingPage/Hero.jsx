@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./HeroSection.css";
 import { useNavigate } from 'react-router-dom';
 
-import image1 from "../../assets/images/Hospital.jpg";
+import image1 from "../../assets/Images/Hospital.jpg";
 import image from "../../assets/Images/image1.jpg";
-import image2 from "../../assets/images/image2.jpg";
-import image3 from "../../assets/images/image3.jpg";
-import image4 from "../../assets/images/image4.jpg";
-import image5 from "../../assets/images/image5.jpg";
+import image2 from "../../assets/Images/image2.jpg";
+import image3 from "../../assets/Images/image3.jpg";
+import image4 from "../../assets/Images/image4.jpg";
+import image5 from "../../assets/Images/image5.jpg";
 
 const slides = [
   {
