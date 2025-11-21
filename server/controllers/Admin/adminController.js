@@ -113,12 +113,13 @@ exports.getAnalytics = async (req, res) => {
 
     const [trend] = await db.query(`
       SELECT 
-        DATE_FORMAT(arrival_time, '%a') AS day, 
-        COUNT(*) AS served
-      FROM queue
-      WHERE status = 'served'
-        AND arrival_time >= CURDATE() - INTERVAL 5 DAY
-      GROUP BY DATE(arrival_time)
+  DATE_FORMAT(arrival_time, '%a') AS day, 
+  COUNT(*) AS served
+FROM queue
+WHERE status = 'served'
+  AND arrival_time >= CURDATE() - INTERVAL 5 DAY
+GROUP BY DATE_FORMAT(arrival_time, '%a')
+ORDER BY MIN(arrival_time)
     `);
 
     const [load] = await db.query(`
