@@ -71,15 +71,17 @@ exports.callPatient = async (req, res) => {
     if (!doctorId) return res.status(404).json({ error: 'Doctor not found' });
 
     const [rows] = await db.query(
-      'SELECT id FROM queue WHERE patient_id = ? AND assigned_doctor_id = ? AND status = "waiting"',
-      [patientId, doctorId]
-    );
+  'SELECT id FROM queue WHERE patient_id = ? AND assigned_doctor_id = ? AND status = ?',
+  [patientId, doctorId, 'waiting']
+);
+
     if (!rows.length) return res.status(400).json({ error: 'Invalid patient state' });
 
     await db.query(
-      'UPDATE queue SET status = "called", called_at = NOW() WHERE patient_id = ? AND assigned_doctor_id = ?',
-      [patientId, doctorId]
-    );
+  'UPDATE queue SET status = ?, called_at = NOW() WHERE patient_id = ? AND assigned_doctor_id = ?',
+  ['called', patientId, doctorId]
+);
+
 
     const [queueEntry] = await db.query(`
       SELECT q.queueNo, u.first_name, u.last_name, d.room, p.user_id AS patientUserId
@@ -123,15 +125,17 @@ exports.startConsultation = async (req, res) => {
     if (!doctorId) return res.status(404).json({ error: 'Doctor not found' });
 
     const [rows] = await db.query(
-      'SELECT id FROM queue WHERE patient_id = ? AND assigned_doctor_id = ? AND status = "called"',
-      [patientId, doctorId]
-    );
+  'SELECT id FROM queue WHERE patient_id = ? AND assigned_doctor_id = ? AND status = ?',
+  [patientId, doctorId, 'called']
+);
+
     if (!rows.length) return res.status(400).json({ error: 'Invalid patient state' });
 
     await db.query(
-      'UPDATE queue SET status = "in_progress" WHERE patient_id = ? AND assigned_doctor_id = ?',
-      [patientId, doctorId]
-    );
+  'UPDATE queue SET status = ? WHERE patient_id = ? AND assigned_doctor_id = ?',
+  ['in_progress', patientId, doctorId]
+);
+
 
     const [queueEntry] = await db.query(`
       SELECT q.queueNo, u.first_name, u.last_name, d.room, p.user_id AS patientUserId
@@ -175,15 +179,17 @@ exports.markServed = async (req, res) => {
     if (!doctorId) return res.status(404).json({ error: 'Doctor not found' });
 
     const [rows] = await db.query(
-      'SELECT id FROM queue WHERE patient_id = ? AND assigned_doctor_id = ? AND status = "in_progress"',
-      [patientId, doctorId]
-    );
+  'SELECT id FROM queue WHERE patient_id = ? AND assigned_doctor_id = ? AND status = ?',
+  [patientId, doctorId, 'in_progress']
+);
+
     if (!rows.length) return res.status(400).json({ error: 'Invalid patient state' });
 
     await db.query(
-      'UPDATE queue SET status = "served", served_at = NOW() WHERE patient_id = ? AND assigned_doctor_id = ?',
-      [patientId, doctorId]
-    );
+  'UPDATE queue SET status = ?, served_at = NOW() WHERE patient_id = ? AND assigned_doctor_id = ?',
+  ['served', patientId, doctorId]
+);
+
 
     const [[{ user_id: patientUserId } = {}]] = await db.query(
       'SELECT user_id FROM patients WHERE id = ?',
