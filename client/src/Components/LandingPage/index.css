@@ -432,13 +432,16 @@ a:hover {
   color: #007bff;
   transform: translateX(5px);
 }
-
+.social {
+  display: flex;
+  gap: 20px; /* instead of margin-right: 80px */
+}
 .social-links {
-   display: flex;
-  gap: 40px;
-  flex: 2 1 500px;
-  justify-content: space-between;
-  margin-right: 100px;
+  display: flex;
+  gap: 20px; /* spacing between icons */
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  justify-content: center; /* centers the icons */
+  margin: 0 auto; /* removes fixed right margin */
 }
 
 .social-links a {
