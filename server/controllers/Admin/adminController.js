@@ -195,7 +195,9 @@ if (patientUserId) {
 }
 
 
-req.io?.emit('admin_queue_updated');
+req.io.emit("queue_updated");
+req.io.emit("admin_queue_updated");
+;
   
 
       return res.json({ success: true, updated: true });
