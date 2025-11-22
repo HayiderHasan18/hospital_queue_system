@@ -84,7 +84,7 @@ return (
 
       {/* Copyright */}
       <div className="copyright text-center">
-        <p>&copy; {currentYear} Alem Expect Solution. All rights reserved.</p> 
+        <p>&copy; {currentYear} Developed by ❤️Hayider. All rights reserved.</p> 
       </div>
     </div>
   </footer>
