@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
       password: hashedPassword,
     });
 
-    return res.status(201).json({ message: "User registered successfully" });
+    return res.status(201).json({ message: " 👏You registered successfully. Login Now" });
   } catch (error) {
     console.error("Register error:", error);
     return res.status(500).json({ message: "Server error", error: error.message });
