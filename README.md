@@ -7,6 +7,7 @@ A full-stack web app that simplifies hospital queue management, helping patients
 View Here   https://queueheydaraa.netlify.app
 
 Features
+
 Users: Register, login, join queue, track position,look thier turn on public screen.
 Admin/Staff: Manage queue, call next patient, monitor status
 Tech Stack
@@ -14,8 +15,11 @@ Frontend: React, HTML, CSS, JavaScript
 Backend: Node.js, Express.js
 Database: MySQL
 Other: JWT Authentication, REST API
+
+
 Installation
-git clone https://github.com/your-username/hospital-queue-management.git
+
+git clone https://github.com/HayiderHasan18/hospital_queue_system.git
 cd backend
 nodemon server.js
 npm start
@@ -26,6 +30,7 @@ npm run dev
 Set your .env with DB credentials and JWT_SECRET.
 
 Author
+
 
 Hayider Hasan
 https://github.com/HayiderHasan18
