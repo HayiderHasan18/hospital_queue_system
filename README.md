@@ -19,7 +19,7 @@ Other: JWT Authentication, REST API
 
 Installation
 
-git clone https://github.com/HayiderHasan18/hospital_queue_system.git
+git clone https://github.com/Heydaraa/hospital_queue_system.git
 
 cd backend
 
