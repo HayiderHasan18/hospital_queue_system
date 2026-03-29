@@ -20,12 +20,19 @@ Other: JWT Authentication, REST API
 Installation
 
 git clone https://github.com/HayiderHasan18/hospital_queue_system.git
+
 cd backend
+
 nodemon server.js
+
 npm start
-cd ../client
+
+cd ../clien
+t
 npm install
+
 npm run dev
+
 
 Set your .env with DB credentials and JWT_SECRET.
 
