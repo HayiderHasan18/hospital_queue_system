@@ -1,64 +1,82 @@
-🏥 Hospital Queue Management System
-Smart Queue Handling for Efficient Hospital Operations
+# 🧾 AI-Powered Complaint Management System
 
-🧠 Overview
-A full-stack web application that helps hospitals manage patient queues efficiently.
+**Smart Complaint Handling with AI Assistance & Admin Workflow**
 
-The system allows users to join queues, track their position, and view real-time updates, while enabling staff to manage and call patients in order.
+---
 
-It also includes an admin-controlled workflow for managing queue operations.
+## 🧠 Overview
 
-🚀 Live Demo
-🌐 Frontend: https://queueheydaraa.netlify.app
+A full-stack web application that allows users to submit complaints and interact with an AI assistant for guidance.
 
-✨ Key Features
-👤 User Features
-Register and login to the system
+The system leverages AI to:
+- Automatically categorize complaints
+- Generate draft responses
 
-Join the queue for a specific department or service
+It also includes an **admin-controlled approval workflow** with email notifications.
 
-Track current position in the queue
+---
 
-View the current turn on a public display
+## 🚀 Live Demo
 
-View queue status and estimated wait times
+- 🌐 Frontend: https://customer-support-hayidar.netlify.app 
+    
 
-👨‍💼 Admin / Staff Features
-Secure admin-only access with role-based authentication
+---
 
-Manage patient queue with an intuitive dashboard
+## ✨ Key Features
 
-Call the next patient for consultation
+### 🤖 AI Capabilities
+- AI-powered chatbot for user support
+- Automatic complaint categorization
+- AI-generated draft responses
 
-View and search for patients in the queue
+### 👤 User Features
+- Submit complaints without registration
+- Track complaint status
+- Interact with AI assistant
 
-Reset or control queue flow efficiently
+### 👨‍💼 Admin Features
+- Secure admin-only access
+- Review and manage complaints
+- Edit and approve AI-generated responses
+- Send final responses via email
+- Dashboard for monitoring complaints
 
-Monitor real-time queue status
+---
 
-🔐 Authentication System
-JWT-based authentication for secure access
+## 📧 Notification System
+- Email notifications sent after admin approval
 
-Role-based access control (User / Admin)
+---
 
-🛠️ Tech Stack
-Category	Technology
-Frontend	React, HTML, CSS, JavaScript
-Backend	Node.js, Express.js
-Database	MySQL
-Others	JWT Authentication, REST API, Nodemon
+## 🛠️ Tech Stack
+
+| Category   | Technology |
+|-----------|------------|
+| Frontend  | React, Tailwind CSS, JavaScript |
+| Backend   | Node.js, Express.js |
+| Database  | MySQL |
+| Others    | AI API, Nodemailer, Axios, dotenv, CORS |
+
+---
+
+## ⚙️ Local Development Setup
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/Heydaraa/Complaint-Support.git
+cd Complaint-Support
+
 ⚙️ Local Development Setup
 1️⃣ Clone Repository
-bash
-git clone https://github.com/Heydaraa/hospital_queue_system.git
-cd hospital_queue_system
+git clone https://github.com/Heydaraa/Complaint-Support.git
+cd Complaint-Support
 2️⃣ Backend Setup
-bash
 cd backend
 npm install
+
 Create a .env file inside backend/:
 
-text
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
@@ -67,70 +85,50 @@ DB_PORT=3306
 
 PORT=5000
 JWT_SECRET=your_secret_key
+
+# AI API
+AI_API_KEY=your_api_key
+
+# Email Configuration
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password
+
 Run backend:
 
-bash
 npm start
-# or with nodemon for development
-nodemon server.js
 3️⃣ Database Setup (MySQL)
-Start MySQL (XAMPP, MAMP, or Workbench)
-
+Start MySQL (XAMPP or Workbench)
 Create database:
-
-sql
 CREATE DATABASE your_database_name;
-Import or create required tables (users, queues, etc.)
-
+Import or create required tables
 4️⃣ Frontend Setup
-bash
-cd ../client
+cd ../frontend
 npm install
 npm run dev
 ▶️ Running the Application
 Start MySQL server
-
 Start backend server
-
 Start frontend development server
+Open browser:
 
-Open browser: 👉 http://localhost:5173
+👉 http://localhost:5173
 
 🔄 System Workflow
-text
-User → Register/Login → Join Queue
+User → Submit Complaint / Chat with AI
         ↓
-System → Assign Queue Number & Position
+AI → Categorize + Generate Draft
         ↓
-Admin → Call Next Patient
+Admin → Review & Approve
         ↓
-System → Update Queue & Display
-        ↓
-User → Track Position / View Current Turn
+System → Send Email Response
 📁 Project Structure
-text
-Hospital Queue System/
-│── client/          # React frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── ...
-│── backend/         # Node.js + Express API
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   └── server.js
+Complaint-Support/
+│── frontend/     # React client
+│── backend/      # Node.js + Express API
 📌 Notes
 Ensure environment variables are correctly configured
-
-Backend must be running before frontend
-
-MySQL database must be created and connected properly
-
-JWT secret is required for authentication
-
-Admin users must be seeded manually in the database
-
+Email service requires valid credentials
+AI features depend on API availability
 📄 License
+
 This project is developed for educational and internship purposes.
