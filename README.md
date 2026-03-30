@@ -1,6 +1,5 @@
 🏥 Hospital Queue Management System
 <p align="center"> <b>Efficient Queue Tracking and Management for Hospitals</b> </p>
-🧠 Overview
 
 A full-stack web application designed to simplify hospital queue management.
 It allows patients to track their position in the queue while enabling staff to efficiently manage and call patients in order.
