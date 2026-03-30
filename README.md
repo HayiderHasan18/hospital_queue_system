@@ -1,29 +1,38 @@
 🏥 Hospital Queue Management System
-<p align="center"> <b>Efficient Queue Tracking and Management for Hospitals</b> </p>
+
+Smart Queue Handling for Efficient Hospital Operations
+
 🧠 Overview
 
-A full-stack web application designed to simplify hospital queue management.
-It allows patients to track their position in the queue while enabling staff to efficiently manage and call patients in order.
+A full-stack web application that helps hospitals manage patient queues efficiently.
 
+The system allows:
+
+Patients to join and track their position in the queue
+Staff/admin to manage and call patients in order
+Real-time monitoring of queue status
 🚀 Live Demo
-🌐 Application: https://queueheydaraa.netlify.app
-✨ Features
+🌐 Frontend: https://queueheydaraa.netlify.app
+✨ Key Features
 👤 User Features
 Register and login
-Join hospital queue
-Track real-time queue position
-View current turn on public display screen
+Join the queue
+Track queue position in real time
+View current turn on public screen
 👨‍💼 Admin / Staff Features
+Secure admin-only access
 Manage patient queue
 Call next patient
-Monitor queue status
-Control and update queue flow
+Monitor and control queue status
+🔐 Authentication System
+JWT-based authentication for secure access
+Role-based access control (User / Admin)
 🛠️ Tech Stack
 Category	Technology
 Frontend	React, HTML, CSS, JavaScript
 Backend	Node.js, Express.js
 Database	MySQL
-Other	JWT Authentication, REST API
+Others	JWT Authentication, REST API
 ⚙️ Local Development Setup
 1️⃣ Clone Repository
 git clone https://github.com/Heydaraa/hospital_queue_system.git
