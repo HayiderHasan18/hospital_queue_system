@@ -1,16 +1,13 @@
-# 🧾 AI-Powered Complaint Management System
+# 🏥 Hospital Queue Management System
 
-**Smart Complaint Handling with AI Assistance & Admin Workflow**
+**Efficient Queue Tracking and Management for Hospitals**
 
 ---
 
 ## 🧠 Overview
 
-A full-stack web application that allows users to submit complaints and interact with an AI assistant for guidance.
-
-The system leverages AI to:
-- Automatically categorize complaints
-- Generate draft responses
+A full-stack web application designed to simplify hospital queue management.
+It allows patients to track their position in the queue while enabling staff to efficiently manage and call patients in order.
 
 It also includes an **admin-controlled approval workflow** with email notifications.
 
