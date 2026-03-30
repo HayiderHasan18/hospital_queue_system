@@ -42,15 +42,7 @@ cd backend
 npm install
 nodemon server.js
 
-Make sure your backend is properly configured before running.
-
-3️⃣ Frontend Setup
-cd ../client
-npm install
-npm run dev
-🔐 Environment Variables
-
-Create a .env file in the backend directory:
+Create a .env file inside backend/:
 
 DB_HOST=localhost
 DB_USER=root
@@ -58,35 +50,42 @@ DB_PASSWORD=your_password
 DB_NAME=your_database_name
 DB_PORT=3306
 
-JWT_SECRET=your_secret_key
 PORT=5000
+JWT_SECRET=your_secret_key
+3️⃣ Database Setup (MySQL)
+Start MySQL (XAMPP or MySQL Workbench)
+Create database:
+CREATE DATABASE your_database_name;
+Import or create required tables based on your schema
+4️⃣ Frontend Setup
+cd ../client
+npm install
+npm run dev
 ▶️ Running the Application
 Start MySQL server
-Run backend server
-Run frontend application
+Start backend server
+Start frontend application
 Open browser:
 
 👉 http://localhost:5173
- (or your frontend port)
 
 🔄 System Workflow
-Patient → Register/Login → Join Queue
-            ↓
+User → Register/Login → Join Queue
+        ↓
 System → Assign Queue Number
-            ↓
+        ↓
 Admin → Call Next Patient
-            ↓
-Patient → Track Status / View Turn
+        ↓
+User → Track Position / View Turn
 📁 Project Structure
 hospital_queue_system/
 │── client/      # React frontend
 │── backend/     # Node.js + Express API
-👨‍💻 Author
-
-Hayider Hasan
-GitHub: https://github.com/Heydaraa
-
 📌 Notes
 Ensure environment variables are correctly configured
 Backend must be running before frontend
 MySQL database must be created and connected properly
+JWT secret is required for authentication
+📄 License
+
+This project is developed for educational and internship purposes.
