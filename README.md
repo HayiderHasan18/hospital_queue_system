@@ -9,48 +9,36 @@
 A full-stack web application designed to simplify hospital queue management.
 It allows patients to track their position in the queue while enabling staff to efficiently manage and call patients in order.
 
-It also includes an **admin-controlled approval workflow** with email notifications.
-
 ---
 
 ## 🚀 Live Demo
 
-- 🌐 Frontend: https://customer-support-hayidar.netlify.app 
+- 🌐 Application: https://queueheydaraa.netlify.app 
     
 
 ---
 
 ## ✨ Key Features
 
-### 🤖 AI Capabilities
-- AI-powered chatbot for user support
-- Automatic complaint categorization
-- AI-generated draft responses
+### 👤 Patient Features
+- Register and login
+- Join hospital queue
+- Track real-time queue position
+- View current turn on public display screen
 
-### 👤 User Features
-- Submit complaints without registration
-- Track complaint status
-- Interact with AI assistant
-
-### 👨‍💼 Admin Features
-- Secure admin-only access
-- Review and manage complaints
-- Edit and approve AI-generated responses
-- Send final responses via email
-- Dashboard for monitoring complaints
-
----
-
-## 📧 Notification System
-- Email notifications sent after admin approval
-
+### 👨‍💼 Admin / Staff Features
+- Manage patient queue
+- Call next patient
+- Monitor queue status
+- Control and update queue flow
+  
 ---
 
 ## 🛠️ Tech Stack
 
 | Category   | Technology |
 |-----------|------------|
-| Frontend  | React, Tailwind CSS, JavaScript |
+| Frontend  | React,  CSS, JavaScript |
 | Backend   | Node.js, Express.js |
 | Database  | MySQL |
 | Others    | AI API, Nodemailer, Axios, dotenv, CORS |
@@ -61,16 +49,13 @@ It also includes an **admin-controlled approval workflow** with email notificati
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/Heydaraa/Complaint-Support.git
-cd Complaint-Support
+git clone https://github.com/Heydaraa/hospital_queue_system.git
+cd hospital_queue_system
 
-⚙️ Local Development Setup
-1️⃣ Clone Repository
-git clone https://github.com/Heydaraa/Complaint-Support.git
-cd Complaint-Support
 2️⃣ Backend Setup
 cd backend
 npm install
+nodemon server.js
 
 Create a .env file inside backend/:
 
@@ -83,23 +68,13 @@ DB_PORT=3306
 PORT=5000
 JWT_SECRET=your_secret_key
 
-# AI API
-AI_API_KEY=your_api_key
-
-# Email Configuration
-EMAIL_USER=your_email@example.com
-EMAIL_PASS=your_email_password
-
-Run backend:
-
-npm start
 3️⃣ Database Setup (MySQL)
 Start MySQL (XAMPP or Workbench)
 Create database:
 CREATE DATABASE your_database_name;
 Import or create required tables
 4️⃣ Frontend Setup
-cd ../frontend
+cd ../client
 npm install
 npm run dev
 ▶️ Running the Application
@@ -111,21 +86,24 @@ Open browser:
 👉 http://localhost:5173
 
 🔄 System Workflow
-User → Submit Complaint / Chat with AI
-        ↓
-AI → Categorize + Generate Draft
-        ↓
-Admin → Review & Approve
-        ↓
-System → Send Email Response
+Patient → Register/Login → Join Queue
+            ↓
+System → Assign Queue Number
+            ↓
+Admin → Call Next Patient
+            ↓
+Patient → Track Status / View Turn
 📁 Project Structure
 Complaint-Support/
-│── frontend/     # React client
+│── client/     # React client
 │── backend/      # Node.js + Express API
+
+---
+
 📌 Notes
-Ensure environment variables are correctly configured
-Email service requires valid credentials
-AI features depend on API availability
+- Ensure environment variables are correctly configured
+- Backend must be running before frontend
+- MySQL database must be created and connected properly
 📄 License
 
 This project is developed for educational and internship purposes.
